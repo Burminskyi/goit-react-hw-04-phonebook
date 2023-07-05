@@ -15,7 +15,6 @@ export const App = () => {
   }, [contacts]);
 
   const formSubmitHandler = data => {
-    console.log(data);
     setContacts([...contacts, { ...data, id: nanoid() }]);
   };
 
