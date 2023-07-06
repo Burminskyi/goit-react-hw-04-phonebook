@@ -15,7 +15,7 @@ export const App = () => {
   }, [contacts]);
 
   const formSubmitHandler = data => {
-    setContacts([...contacts, { ...data, id: nanoid() }]);
+    setContacts(prev => [...prev, { ...data, id: nanoid() }]);
   };
 
   const changeFilter = ({ target }) => {
@@ -30,7 +30,7 @@ export const App = () => {
   };
 
   const handleDelete = id => {
-    setContacts(contacts.filter(contact => contact.id !== id));
+    setContacts(prev => prev.filter(contact => contact.id !== id));
   };
 
   return (
